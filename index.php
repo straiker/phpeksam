@@ -13,7 +13,7 @@ $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
             <h1>EKSAM</h1>
             <?php
             include("menu.html");
-            $stmt = $mysqli->prepare("SELECT * FROM goods");
+            $stmt = $mysqli->prepare("SELECT * FROM goods WHERE dateSold IS NULL");
 
             $stmt->bind_result($id, $name, $description, $weight, $price, $dateAdded, $dateModified, $dateSold);
             $stmt->execute();

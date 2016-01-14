@@ -5,7 +5,7 @@ $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     if(isset($_POST['add'])) {
-        $stmt = $mysqli->prepare("UPDATE goods SET dateSold=CURRENT_TIMESTAMP WHERE id=?");
+        $stmt = $mysqli->prepare("UPDATE goods SET dateSold=CURRENT_DATE WHERE id=?");
         $stmt->bind_param("i", $_GET['id']);
         $stmt->execute();
         $stmt->close();
