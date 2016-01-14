@@ -8,3 +8,6 @@ create table goods(
     dateModified date,
     dateSold date
 );
+
+ALTER TABLE goods
+  MODIFY COLUMN dateModified TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP;
