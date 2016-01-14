@@ -1,7 +1,13 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: rait
- * Date: 14/01/16
- * Time: 10:58
- */
+<html>
+    <head>
+        <title>PHP eksam - Rait Avastu</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <h1>TEST</h1>
+            <?php
+                
+            ?>
+        </div>
+    </body>
+</html>
