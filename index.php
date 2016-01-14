@@ -10,7 +10,7 @@ $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
     </head>
     <body>
         <div id="wrapper">
-            <h1>EKSAM</h1>
+            <h1>Laos olevad tooted</h1>
             <?php
             include("menu.html");
             $stmt = $mysqli->prepare("SELECT * FROM goods WHERE dateSold IS NULL");
