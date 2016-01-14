@@ -10,15 +10,18 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         $description = $_POST['description'];
         $weight = $_POST['weight'];
         $price = $_POST['price'];
+        $id = $_POST['id'];
 
         if (empty($name || empty($weight) || empty($price))) {
             echo "Täida kohustuslikud väljad";
         } else {
-            echo "test";
+
             $stmt = $mysqli->prepare("UPDATE goods set name=?, description=?, weight=?, price=? WHERE id=?");
-            $stmt->bind_param("ssidi",$name, $description, $weight, $price, $_GET['id']);
+            $stmt->bind_param("ssidi",$name, $description, $weight, $price, $id);
             $stmt->execute();
             $stmt->close();
+
+            echo "test";
         }
     }
 }
@@ -45,6 +48,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                 <label>Toote kirjeldus: </label><textarea  name='description' value='$description'></textarea><br>
                 <label>Toote kaal: *</label><input name='weight' type='text' value='$weight'><br>
                 <label>Toote hind: *</label><input name='price' type='text' value='$price'><br>
+                <input type='hidden' name='id' value='$id'>
                 <input type='submit' id='update' name='update'>
             </form>
             ";

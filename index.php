@@ -12,6 +12,7 @@ $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
         <div id="wrapper">
             <h1>EKSAM</h1>
             <?php
+            include("menu.html");
             $stmt = $mysqli->prepare("SELECT * FROM goods");
 
             $stmt->bind_result($id, $name, $description, $weight, $price, $dateAdded, $dateModified, $dateSold);
@@ -27,7 +28,7 @@ $mysqli = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
                     <td>$weight</td>
                     <td>$price</td>
                     <td>$dateAdded</td>
-                    <td><a href='update.php?id=$id'> UPDATE</a>|<a href='delete.php?id=$id'>KUSTUTA</a></td>
+                    <td><a href='update.php?id=$id'> UPDATE</a>|<a href='delete.php?id=$id'>KUSTUTA</a>|<a href='sell.php?id=$id'>MÜÜ</a></td>
                     </tr>
                 ";
             }

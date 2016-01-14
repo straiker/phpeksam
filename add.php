@@ -32,11 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 </head>
 <body>
     <div id="wrapper">
-        <div id="menu">
-            <ul>
-                <li><a href="index.php"> Back to home!</a></li>
-            </ul>
-        </div>
+        <?php include("menu.html"); ?>
         <div id="form">
             <form method="post" action="add.php">
                 <label>Toote nimi: *</label><input type="text" name="name"><br>
